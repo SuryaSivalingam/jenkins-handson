@@ -1,4 +1,3 @@
-
 all: file hello
 
 file:
