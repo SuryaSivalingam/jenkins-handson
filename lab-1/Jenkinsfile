@@ -17,10 +17,10 @@ pipeline{
 
 
         stage('Echoing message'){
-            steps{
-                when{
+            when{
                     branch 'dev'
                 }
+            steps{
                 script{
                     sh 'echo Echoing from ${env.BRANCH_NAME} in ${env.NODE_NAME}'
                 }
