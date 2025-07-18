@@ -6,12 +6,13 @@ pipeline{
             sh 'make --version'
             }
         }
-        stage('Running makefile'){
+        stage('Running echo'){
             steps{
-            sh 'pwd'
-            dir('/var/lib/jenkins/workspace/make/lab-1'){
-            sh 'make'
-            }
+            sh ' ' '
+                pwd
+                echo "Printing this message from dev branch on ${env.BUILD_NUMBER}"
+                ' ' '
+            
             }
         }
 
