@@ -1,0 +1,22 @@
+pipeline{
+    agent any
+    stages{
+        stage('Hello'){
+            steps{
+                echo 'Hello'
+            }
+        }
+        stage('file check'){
+            steps{
+                waitUntil(initialRecurrencePeriod: 5000) {
+                    fileExists 'test.txt'
+                }
+            }
+        }
+        stage('echo file'){
+            steps{
+                sh 'cat test.txt'
+            }
+        }
+    }
+}
