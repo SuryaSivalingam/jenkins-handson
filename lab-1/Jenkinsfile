@@ -6,15 +6,15 @@ pipeline{
             sh 'make --version'
             }
         }
-        stage('Running echo'){
-            steps{
-            sh ' ' '
-                pwd
-                echo "Printing this message from dev branch on ${env.BUILD_NUMBER}"
-                ' ' '
-            
-            }
-        }
+        stage('Running echo') {
+             steps {
+                 sh '''
+                    pwd
+                    echo "Printing this message from dev branch on ${BUILD_NUMBER}"
+                   '''
+              }
+          }
+
 
         stage('Echoing message'){
             steps{
