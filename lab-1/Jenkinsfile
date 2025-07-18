@@ -8,10 +8,10 @@ pipeline{
         }
         stage('Running echo') {
              steps {
-                 sh '''
+                 sh """
                     pwd
-                    echo "Printing this message from dev branch on ${BUILD_NUMBER}"
-                   '''
+                    echo "Printing this message from dev branch on ${env.BUILD_NUMBER}"
+                   """
               }
           }
 
