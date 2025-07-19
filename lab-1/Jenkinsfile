@@ -8,10 +8,11 @@ pipeline{
         }
         stage('Running makefile'){
             steps{
-            sh 'pwd'
-            dir('/var/lib/jenkins/workspace/make/lab-1'){
-            sh 'make'
-            }
+            sh """
+              pwd
+              echo "Printing this line from ${env.BRANCH_NAME} branch
+              """
+            
             }
         }
     }
